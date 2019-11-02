@@ -1,17 +1,26 @@
-import React from 'react';
+import React, { Component } from 'react';
 	import './search-panel.css';
 
-const SearchPanel = () => {
-	return (
-		<div className="todo-search">
-			<input className="form-control" placeholder="Search" />
-			<div className="btn-group">
-				<button className="btn btn-info">All</button>
-				<button className="btn btn-secondary">Active</button>
-				<button className="btn btn-secondary">Done</button>
-			</div>
-		</div>
-	);
-};
+export default class SearchPanel extends Component {
 
-export default SearchPanel;
+	state = {
+		term: ''
+	}
+
+	setTerm = (e) => {
+		const term = e.target.value;
+		this.setState({ term });
+		this.props.onSearchChange(term);
+	}
+
+	render() {
+		return (
+			<input
+				className="form-control"
+				placeholder="Search"
+				value={this.state.term}
+				onChange={this.setTerm}
+			/>
+		);
+	}
+};

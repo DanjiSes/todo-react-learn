@@ -1,10 +1,24 @@
 .todo-item {
 	display: flex;
 	align-items: center;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }
 .todo-item button {
-	margin-left: auto;
-}
-.todo-item button:last-child {
 	margin-left: .5rem;
+}
+.todo-item span {
+	cursor: pointer;
+	width: 100%;
+}
+.todo-item.done span {
+	text-decoration: line-through;
+}
+.todo-item.important span {
+	font-weight: bold;
+	color: steelblue;
 }
