@@ -1,0 +1,10 @@
+.todo-item {
+	display: flex;
+	align-items: center;
+}
+.todo-item button {
+	margin-left: auto;
+}
+.todo-item button:last-child {
+	margin-left: .5rem;
+}
